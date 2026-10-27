@@ -1,3 +1,11 @@
+## 🎥 Project Demo
+
+Watch the complete demo of **ApplyTrack — Smart Internship & Job Application Tracker**.
+
+[▶️ Watch ApplyTrack Demo Video](https://drive.google.com/file/d/16vLU9bvu7MMZSilM_c3EUE30z7foPBsU/view?usp=sharing)
+
+
+
 # ApplyTrack — Smart Internship & Job Application Tracker
 
 ApplyTrack is a full-stack, production-minded web application engineered to help college students, new graduates, and job seekers organize and master their job search pipeline from initial discovery to final offer.
