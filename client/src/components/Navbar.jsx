@@ -16,7 +16,7 @@ export const Navbar = ({ title, subtitle }) => {
     <header
       style={{
         height: '70px',
-        backgroundColor: '#ffffff',
+        backgroundColor: 'var(--bg-card)',
         borderBottom: '1px solid var(--border-color)',
         padding: '0 2rem',
         display: 'flex',

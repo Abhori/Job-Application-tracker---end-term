@@ -190,7 +190,7 @@ Job tracker/
 - **npm**: v9.0.0 or later
 - **Git**
 
-*(Note: A local MongoDB installation is optional. If `MONGODB_URI` is left unconfigured in local development, the application automatically launches an in-memory database instance for zero-friction setup.)*
+*(Note: A local MongoDB installation is optional. If `MONGODB_URI` is unset, local development uses `mongodb-memory-server`; its MongoDB binary may need to download on first run. If that is unavailable, the server falls back to `mongodb://127.0.0.1:27017/applytrack`.)*
 
 ---
 
@@ -198,8 +198,8 @@ Job tracker/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/<your-username>/applytrack.git
-   cd "Job tracker"
+   git clone https://github.com/Abhori/Job-Application-tracker-.git
+   cd Job-Application-tracker-
    ```
 
 2. **Install all dependencies:**
@@ -209,9 +209,9 @@ Job tracker/
 
 3. **Configure Environment Variables:**
    ```bash
-   cp .env.example .env
    cp server/.env.example server/.env
    ```
+   Set the `JWT_SECRET` and `COOKIE_SECRET` values in `server/.env` to unique random values before running the app. In production, the server refuses to start if either secret is missing. Local development generates temporary random signing secrets when they are not set. Keep `.env` files out of version control; only the placeholder `.env.example` templates belong in Git.
 
 4. **Start the Development Servers:**
    ```bash
@@ -372,4 +372,4 @@ This repository includes a production-ready `render.yaml` specification.
 
 ## 15. License
 
-ApplyTrack is open-source software licensed under the [MIT License](LICENSE).
+This repository does not currently include a `LICENSE` file, so no open-source license has been granted. Add a license before redistributing or reusing the project.

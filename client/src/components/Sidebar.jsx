@@ -28,7 +28,7 @@ export const Sidebar = ({ onOpenNewAppModal }) => {
     <aside
       style={{
         width: '260px',
-        backgroundColor: '#ffffff',
+        backgroundColor: 'var(--bg-card)',
         borderRight: '1px solid var(--border-color)',
         display: 'flex',
         flexDirection: 'column',
@@ -120,7 +120,7 @@ export const Sidebar = ({ onOpenNewAppModal }) => {
           display: 'flex',
           alignItems: 'center',
           gap: '0.75rem',
-          backgroundColor: '#f8fafc',
+          backgroundColor: '#0a0f1d',
         }}
       >
         <div
@@ -128,7 +128,7 @@ export const Sidebar = ({ onOpenNewAppModal }) => {
             width: '36px',
             height: '36px',
             borderRadius: '50%',
-            backgroundColor: '#e0e7ff',
+            backgroundColor: 'rgba(99, 102, 241, 0.25)',
             color: 'var(--primary)',
             display: 'grid',
             placeItems: 'center',

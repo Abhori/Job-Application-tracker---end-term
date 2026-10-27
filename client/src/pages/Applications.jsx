@@ -181,7 +181,7 @@ export const Applications = () => {
               <div
                 style={{
                   display: 'flex',
-                  backgroundColor: '#f1f5f9',
+                  backgroundColor: '#0a0f1d',
                   borderRadius: 'var(--radius-sm)',
                   padding: '2px',
                   border: '1px solid var(--border-color)',
@@ -192,7 +192,7 @@ export const Applications = () => {
                   style={{
                     padding: '0.375rem 0.625rem',
                     borderRadius: 'var(--radius-sm)',
-                    backgroundColor: viewMode === 'kanban' ? '#ffffff' : 'transparent',
+                    backgroundColor: viewMode === 'kanban' ? 'var(--bg-card)' : 'transparent',
                     boxShadow: viewMode === 'kanban' ? 'var(--shadow-sm)' : 'none',
                     color: viewMode === 'kanban' ? 'var(--primary)' : 'var(--text-secondary)',
                   }}
@@ -206,7 +206,7 @@ export const Applications = () => {
                   style={{
                     padding: '0.375rem 0.625rem',
                     borderRadius: 'var(--radius-sm)',
-                    backgroundColor: viewMode === 'list' ? '#ffffff' : 'transparent',
+                    backgroundColor: viewMode === 'list' ? 'var(--bg-card)' : 'transparent',
                     boxShadow: viewMode === 'list' ? 'var(--shadow-sm)' : 'none',
                     color: viewMode === 'list' ? 'var(--primary)' : 'var(--text-secondary)',
                   }}
@@ -263,7 +263,7 @@ export const Applications = () => {
                     </span>
                     <span
                       style={{
-                        backgroundColor: '#ffffff',
+                        backgroundColor: 'var(--bg-card)',
                         border: '1px solid var(--border-color)',
                         borderRadius: 'var(--radius-full)',
                         padding: '0.125rem 0.5rem',
@@ -319,7 +319,7 @@ export const Applications = () => {
                               fontSize: '0.7rem',
                               padding: '0.125rem 0.375rem',
                               borderRadius: '4px',
-                              backgroundColor: '#f1f5f9',
+                              backgroundColor: 'rgba(255, 255, 255, 0.08)',
                               color: 'var(--text-muted)',
                               textTransform: 'capitalize',
                             }}
@@ -332,8 +332,8 @@ export const Applications = () => {
                                 fontSize: '0.7rem',
                                 padding: '0.125rem 0.375rem',
                                 borderRadius: '4px',
-                                backgroundColor: '#ecfdf5',
-                                color: '#065f46',
+                                backgroundColor: 'rgba(16, 185, 129, 0.15)',
+                                color: '#34d399',
                               }}
                             >
                               {app.salary}
@@ -342,7 +342,7 @@ export const Applications = () => {
                         </div>
 
                         {/* Quick Status Move Dropdown */}
-                        <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '0.625rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '0.625rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                           <select
                             value={app.status}
                             onChange={(e) => handleQuickStatusChange(app._id, e.target.value)}
@@ -351,7 +351,7 @@ export const Applications = () => {
                               padding: '0.25rem 0.5rem',
                               borderRadius: 'var(--radius-sm)',
                               border: '1px solid var(--border-color)',
-                              backgroundColor: '#f8fafc',
+                              backgroundColor: '#0c1220',
                               color: 'var(--text-secondary)',
                             }}
                           >
@@ -460,7 +460,7 @@ export const Applications = () => {
                   alignItems: 'center',
                   padding: '1rem 1.5rem',
                   borderTop: '1px solid var(--border-color)',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: 'var(--bg-card)',
                 }}
               >
                 <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>

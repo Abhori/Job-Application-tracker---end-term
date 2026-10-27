@@ -45,7 +45,7 @@ export const Login = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#f8fafc',
+        backgroundColor: 'var(--bg-app)',
         padding: '1.5rem',
       }}
     >
@@ -84,9 +84,9 @@ export const Login = () => {
         {formError && (
           <div
             style={{
-              backgroundColor: '#fef2f2',
-              border: '1px solid #fecaca',
-              color: '#dc2626',
+              backgroundColor: 'rgba(239, 68, 68, 0.15)',
+              border: '1px solid rgba(239, 68, 68, 0.3)',
+              color: '#f87171',
               padding: '0.75rem',
               borderRadius: 'var(--radius-sm)',
               fontSize: '0.8125rem',

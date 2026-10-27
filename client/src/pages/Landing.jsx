@@ -16,7 +16,7 @@ export const Landing = () => {
   const { isAuthenticated } = useAuth();
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#ffffff' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-app)' }}>
       {/* Top Navigation */}
       <nav
         style={{
@@ -136,7 +136,7 @@ export const Landing = () => {
       </section>
 
       {/* Core Highlights */}
-      <section style={{ backgroundColor: '#f8fafc', padding: '4.5rem 1.5rem', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+      <section style={{ backgroundColor: '#0a0f1d', padding: '4.5rem 1.5rem', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <h2 style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
@@ -154,7 +154,7 @@ export const Landing = () => {
                   width: '44px',
                   height: '44px',
                   borderRadius: 'var(--radius-sm)',
-                  backgroundColor: '#eef2ff',
+                  backgroundColor: 'rgba(99, 102, 241, 0.2)',
                   color: 'var(--primary)',
                   display: 'grid',
                   placeItems: 'center',
@@ -163,7 +163,7 @@ export const Landing = () => {
               >
                 <BriefcaseBusiness size={22} />
               </div>
-              <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--text-main)' }}>
                 Full Pipeline Lifecycle
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
@@ -178,7 +178,7 @@ export const Landing = () => {
                   width: '44px',
                   height: '44px',
                   borderRadius: 'var(--radius-sm)',
-                  backgroundColor: '#ecfdf5',
+                  backgroundColor: 'rgba(16, 185, 129, 0.2)',
                   color: 'var(--success)',
                   display: 'grid',
                   placeItems: 'center',
@@ -187,7 +187,7 @@ export const Landing = () => {
               >
                 <BarChart3 size={22} />
               </div>
-              <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--text-main)' }}>
                 Authentic Analytics
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
@@ -202,8 +202,8 @@ export const Landing = () => {
                   width: '44px',
                   height: '44px',
                   borderRadius: 'var(--radius-sm)',
-                  backgroundColor: '#fffbeb',
-                  color: '#b45309',
+                  backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                  color: '#fbbf24',
                   display: 'grid',
                   placeItems: 'center',
                   marginBottom: '1rem',
@@ -211,7 +211,7 @@ export const Landing = () => {
               >
                 <Sparkles size={22} />
               </div>
-              <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--text-main)' }}>
                 Explainable Skill Gap Engine
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>

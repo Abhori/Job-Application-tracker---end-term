@@ -111,8 +111,8 @@ export const Dashboard = () => {
         {overdueEventsCount > 0 && (
           <div
             style={{
-              backgroundColor: '#fef2f2',
-              border: '1px solid #fecaca',
+              backgroundColor: 'rgba(239, 68, 68, 0.15)',
+              border: '1px solid rgba(239, 68, 68, 0.3)',
               borderRadius: 'var(--radius-md)',
               padding: '1.25rem',
               marginBottom: '1.75rem',
@@ -127,8 +127,8 @@ export const Dashboard = () => {
                 style={{
                   padding: '0.5rem',
                   borderRadius: '50%',
-                  backgroundColor: '#fee2e2',
-                  color: '#dc2626',
+                  backgroundColor: 'rgba(239, 68, 68, 0.25)',
+                  color: '#f87171',
                   display: 'grid',
                   placeItems: 'center',
                 }}
@@ -136,16 +136,16 @@ export const Dashboard = () => {
                 <AlertCircle size={22} />
               </div>
               <div>
-                <strong style={{ color: '#991b1b', fontSize: '0.9375rem' }}>
+                <strong style={{ color: '#f87171', fontSize: '0.9375rem' }}>
                   Action Needed: You have {overdueEventsCount} overdue follow-up{overdueEventsCount > 1 ? 's' : ''} or deadline{overdueEventsCount > 1 ? 's' : ''}!
                 </strong>
-                <p style={{ color: '#b91c1c', fontSize: '0.8125rem', marginTop: '0.125rem' }}>
+                <p style={{ color: '#fca5a5', fontSize: '0.8125rem', marginTop: '0.125rem' }}>
                   {overdueEvents[0]?.title} ({overdueEvents[0]?.application?.company || 'Opportunity'}) was due{' '}
                   {new Date(overdueEvents[0]?.dateTime).toLocaleDateString()}.
                 </p>
               </div>
             </div>
-            <Link to="/events" className="btn btn-secondary btn-sm" style={{ borderColor: '#fca5a5', color: '#991b1b' }}>
+            <Link to="/events" className="btn btn-secondary btn-sm" style={{ borderColor: 'rgba(239, 68, 68, 0.4)', color: '#f87171' }}>
               Resolve Tasks
             </Link>
           </div>
@@ -167,16 +167,16 @@ export const Dashboard = () => {
             value={totalSubmitted}
             subtitle="Moved past discovery/saved stage"
             icon={Send}
-            color="#2563eb"
-            bgColor="#eff6ff"
+            color="#3b82f6"
+            bgColor="rgba(59, 130, 246, 0.18)"
           />
           <StatCard
             title="Upcoming Interviews"
             value={upcomingInterviewsCount}
             subtitle={`${upcomingEvents.length} total scheduled events`}
             icon={Calendar}
-            color="#4f46e5"
-            bgColor="#eef2ff"
+            color="#818cf8"
+            bgColor="rgba(99, 102, 241, 0.18)"
           />
           <StatCard
             title="Offers Received"
@@ -184,8 +184,8 @@ export const Dashboard = () => {
             subtitle={`${offerConversionRate}% offer conversion rate`}
             icon={Trophy}
             tooltip={definitions.offerConversionRate}
-            color="#10b981"
-            bgColor="#ecfdf5"
+            color="#34d399"
+            bgColor="rgba(16, 185, 129, 0.18)"
           />
         </div>
 
@@ -204,12 +204,12 @@ export const Dashboard = () => {
               height: '14px',
               borderRadius: 'var(--radius-full)',
               overflow: 'hidden',
-              backgroundColor: '#e2e8f0',
+              backgroundColor: '#1f293d',
               marginBottom: '1rem',
             }}
           >
             {totalApplications === 0 ? (
-              <div style={{ width: '100%', backgroundColor: '#e2e8f0' }} />
+              <div style={{ width: '100%', backgroundColor: '#1f293d' }} />
             ) : (
               <>
                 <div style={{ width: `${((statusCounts.SAVED || 0) / totalApplications) * 100}%`, backgroundColor: '#94a3b8' }} title={`Saved: ${statusCounts.SAVED || 0}`} />
@@ -336,7 +336,7 @@ export const Dashboard = () => {
                       padding: '0.875rem 1rem',
                       border: '1px solid var(--border-color)',
                       borderRadius: 'var(--radius-sm)',
-                      backgroundColor: '#ffffff',
+                      backgroundColor: '#162035',
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
