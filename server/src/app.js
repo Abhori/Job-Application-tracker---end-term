@@ -3,6 +3,9 @@ import cors from 'cors';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
 import { config } from './config/env.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
 import { apiLimiter } from './middleware/rateLimiter.js';
@@ -14,10 +17,18 @@ import eventRoutes from './routes/eventRoutes.js';
 import analyticsRoutes from './routes/analyticsRoutes.js';
 import skillRoutes from './routes/skillRoutes.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const clientDistPath = path.resolve(__dirname, '../../client/dist');
+
 const app = express();
 
-// Security headers
-app.use(helmet());
+// Security headers (configured to allow inline styles and data URIs for icons)
+app.use(
+  helmet({
+    contentSecurityPolicy: false, // Allows flexible rendering across dev & hosting
+  })
+);
 
 // Cross-Origin Resource Sharing
 const allowedOrigins = [
@@ -30,11 +41,10 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps, curl, server-to-server)
       if (!origin || allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
-      return callback(null, true); // Permissive in dev/render previews
+      return callback(null, true);
     },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
@@ -47,12 +57,12 @@ app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true, limit: '2mb' }));
 app.use(cookieParser(config.COOKIE_SECRET));
 
-// Safe HTTP Request logging (never log request bodies containing passwords/resumes)
+// Safe HTTP Request logging
 if (config.NODE_ENV !== 'test') {
   app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 }
 
-// Rate Limiting
+// Rate Limiting on API endpoints
 app.use('/api', apiLimiter);
 
 // API Routes
@@ -63,7 +73,20 @@ app.use('/api/events', eventRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/skills', skillRoutes);
 
-// Centralized 404 & Error Handling
+// In production or when client/dist exists, serve frontend build
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+
+  app.get('*', (req, res, next) => {
+    // If request begins with /api, pass to API 404 handler
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+}
+
+// Centralized 404 & Error Handling for API routes
 app.use(notFoundHandler);
 app.use(errorHandler);
 
